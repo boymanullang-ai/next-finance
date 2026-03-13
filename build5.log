@@ -1,0 +1,24 @@
+
+> temp-app@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.2s
+  Running TypeScript ...
+Failed to compile.
+
+./stitch-skills/skills/react-components/examples/gold-standard-card.tsx:20:26
+Type error: Cannot find module '../data/mockData' or its corresponding type declarations.
+
+[0m [90m 18 |[39m [90m// Note for Agent: The '@' alias refers to the target project's src directory.[39m
+ [90m 19 |[39m [90m// Ensure src/data/mockData.ts is created before generating this component.[39m
+[31m[1m>[22m[39m[90m 20 |[39m [36mimport[39m { cardData } [36mfrom[39m [32m'../data/mockData'[39m[33m;[39m
+ [90m    |[39m                          [31m[1m^[22m[39m
+ [90m 21 |[39m
+ [90m 22 |[39m [90m/**[39m
+ [90m 23 |[39m [90m * Gold Standard: ActivityCard[39m[0m
+Next.js build worker exited with code: 1 and signal: null

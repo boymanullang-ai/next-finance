@@ -1,0 +1,24 @@
+
+> temp-app@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.9s
+  Running TypeScript ...
+Failed to compile.
+
+./app/api/dashboard/route.ts:40:45
+Type error: Property 'title' does not exist on type '{ title: any; module_id: any; slug: any; lesson_id: any; }[]'.
+
+[0m [90m 38 |[39m       conceptsLearned[33m:[39m (completedCount [33m||[39m [35m0[39m) [33m*[39m [35m2[39m[33m,[39m
+ [90m 39 |[39m       practiceCompleted[33m:[39m completedCount [33m||[39m [35m0[39m[33m,[39m
+[31m[1m>[22m[39m[90m 40 |[39m       currentFocus[33m:[39m latestAttempt[33m?[39m[33m.[39mlessons[33m?[39m[33m.[39mtitle [33m||[39m [32m'Balance Sheet'[39m
+ [90m    |[39m                                             [31m[1m^[22m[39m
+ [90m 41 |[39m     }[33m,[39m
+ [90m 42 |[39m     continueLearning[33m:[39m latestAttempt [33m?[39m {
+ [90m 43 |[39m       lessonId[33m:[39m latestAttempt[33m.[39mlessons[33m.[39mlesson_id[33m,[39m[0m
+Next.js build worker exited with code: 1 and signal: null

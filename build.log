@@ -1,0 +1,30 @@
+
+> temp-app@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.1s
+  Running TypeScript ...
+Failed to compile.
+
+.next/dev/types/validator.ts:153:31
+Type error: Type 'typeof import("C:/Users/Boy Manullang/Documents/1000 Code/next-finance/app/api/lessons/[lessonSlug]/check/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/lessons/[lessonSlug]/check">'.
+  Types of property 'POST' are incompatible.
+    Type '(request: Request, { params }: { params: { lessonSlug: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<GradingResult>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ lessonSlug: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ lessonSlug: string; }>; }' is not assignable to type '{ params: { lessonSlug: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'lessonSlug' is missing in type 'Promise<{ lessonSlug: string; }>' but required in type '{ lessonSlug: string; }'.
+
+[0m [90m 151 |[39m   type __IsExpected[33m<[39m[33mSpecific[39m [36mextends[39m [33mRouteHandlerConfig[39m[33m<[39m[32m"/api/lessons/[lessonSlug]/check"[39m[33m>>[39m [33m=[39m [33mSpecific[39m
+ [90m 152 |[39m   [36mconst[39m handler [33m=[39m {} [36mas[39m [36mtypeof[39m [36mimport[39m([32m"../../../app/api/lessons/[lessonSlug]/check/route.js"[39m)
+[31m[1m>[22m[39m[90m 153 |[39m   type __Check [33m=[39m __IsExpected[33m<[39m[36mtypeof[39m handler[33m>[39m
+ [90m     |[39m                               [31m[1m^[22m[39m
+ [90m 154 |[39m   [90m// @ts-ignore[39m
+ [90m 155 |[39m   type __Unused [33m=[39m __Check
+ [90m 156 |[39m }[0m
+Next.js build worker exited with code: 1 and signal: null
