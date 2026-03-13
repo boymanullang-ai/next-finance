@@ -47,73 +47,76 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ─── Quantus Design Tokens ─── */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* Quantus Brand Colors */
+  --q-purple: #6B46FF;
+  --q-purple-dark: #5533CC;
+  --q-purple-light: #8B6FFF;
+  --q-purple-bg: #F0EEFF;
+  --q-gold: #FFD700;
+  --q-gold-dark: #F0C000;
+  --q-success: #4CAF50;
+  --q-success-light: #E8F5E9;
+  --q-danger: #EF4444;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Layout Colors */
+  --q-bg-main: #F0F0F5;
+  --q-bg-card: #FFFFFF;
+  --q-bg-sidebar: #F5F5FA;
+  --q-bg-dark-card: #1A1A2E;
+  --q-bg-dark-card2: #2D2D44;
+
+  /* Text */
+  --q-text-primary: #1A1A2E;
+  --q-text-secondary: #374151;
+  --q-text-muted: #6B7280;
+  --q-text-light: #9CA3AF;
+
+  /* Borders */
+  --q-border: #E5E7EB;
+  --q-border-purple: #6B46FF;
+
+  /* Heatmap */
+  --q-heat-0: #EBEDF0;
+  --q-heat-1: #9BE9A8;
+  --q-heat-2: #40C463;
+  --q-heat-3: #30A14E;
+  --q-heat-4: #216E39;
+
+  /* shadcn tokens mapped to Quantus palette */
+  --background: #F0F0F5;
+  --foreground: #1A1A2E;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A2E;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A2E;
+  --primary: #6B46FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0EEFF;
+  --secondary-foreground: #6B46FF;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #F0EEFF;
+  --accent-foreground: #6B46FF;
+  --destructive: #EF4444;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #6B46FF;
+  --chart-1: #6B46FF;
+  --chart-2: #FFD700;
+  --chart-3: #4CAF50;
+  --chart-4: #3B82F6;
+  --chart-5: #EF4444;
+  --radius: 0.75rem;
+  --sidebar: #F5F5FA;
+  --sidebar-foreground: #1A1A2E;
+  --sidebar-primary: #6B46FF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8E4FF;
+  --sidebar-accent-foreground: #6B46FF;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #6B46FF;
 }
 
 @layer base {
@@ -122,8 +125,85 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   }
   html {
-    @apply font-sans;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   }
+}
+
+/* ─── Quantus Utility Classes ─── */
+.q-sidebar {
+  background-color: var(--q-bg-sidebar);
+  width: 200px;
+  min-width: 200px;
+}
+
+.q-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--q-text-muted);
+  transition: all 0.15s;
+}
+
+.q-nav-link:hover {
+  background-color: var(--q-purple-bg);
+  color: var(--q-purple);
+}
+
+.q-nav-link.active {
+  background-color: #E8E4FF;
+  color: var(--q-purple);
+}
+
+.q-btn-primary {
+  background-color: var(--q-purple);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 22px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
+.q-btn-primary:hover {
+  background-color: var(--q-purple-dark);
+}
+
+.q-card {
+  background: var(--q-bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--q-border);
+}
+
+.q-progress-bar-track {
+  background: var(--q-purple);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.q-progress-bar-fill {
+  background: var(--q-gold);
+  height: 100%;
+  border-radius: 100px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255,255,255,0.15) 4px,
+    rgba(255,255,255,0.15) 8px
+  );
+}
+
+.q-purple-header {
+  background: linear-gradient(135deg, #7B5CF5 0%, #6B46FF 60%, #5533CC 100%);
+  color: white;
 }

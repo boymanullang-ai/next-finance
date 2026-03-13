@@ -1,35 +1,85 @@
+'use client'
+
 import Link from 'next/link'
-import { BookOpen, LayoutDashboard, Settings, User } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { LayoutDashboard, BookOpen, ClipboardList, User, Mail, Bot } from 'lucide-react'
+
+const navItems = [
+  { label: 'DASHBOARD', href: '/dashboard', icon: LayoutDashboard },
+  { label: 'LEARN', href: '/dashboard/learn', icon: BookOpen },
+  { label: 'STUDY PLAN', href: '/dashboard/studyplan', icon: ClipboardList },
+  { label: 'PROFILE', href: '/dashboard/profile', icon: User },
+  { label: 'CONTACT', href: '/dashboard/contact', icon: Mail },
+]
 
 export function Sidebar() {
+  const pathname = usePathname()
+
   return (
-    <div className="flex h-screen w-64 flex-col border-r bg-white">
-      <div className="flex h-16 items-center px-6 border-b">
-        <Link href="/dashboard" className="flex items-center gap-2 font-bold text-xl text-blue-700">
-          <BookOpen className="h-6 w-6" />
-          <span>Next Finance</span>
+    <aside
+      className="flex flex-col h-screen q-sidebar border-r border-[var(--q-border)] shrink-0"
+      style={{ width: 200 }}
+    >
+      {/* Logo */}
+      <div
+        className="flex items-center px-4 py-4 border-b border-[var(--q-border)]"
+        style={{ minHeight: 60 }}
+      >
+        <Link href="/dashboard" className="flex items-center gap-2 select-none">
+          {/* Fish mascot placeholder circle */}
+          <div
+            className="rounded-full flex items-center justify-center text-white font-black text-sm"
+            style={{
+              width: 32,
+              height: 32,
+              background: 'linear-gradient(135deg, #FFB800 0%, #FF8C00 100%)',
+              fontSize: 14,
+            }}
+          >
+            Q
+          </div>
+          <span
+            className="font-black tracking-tight"
+            style={{ fontSize: 18, color: '#1A1A2E' }}
+          >
+            <span style={{ color: '#FFB800' }}>Q</span>
+            <span style={{ color: '#6B46FF' }}>uantus</span>
+          </span>
         </Link>
       </div>
-      <div className="flex-1 py-6 flex flex-col gap-2 px-4">
-        <Link href="/dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-900 bg-gray-100 hover:bg-gray-100 transition-colors">
-          <LayoutDashboard className="h-5 w-5 text-blue-600" />
-          <span className="font-medium">Dashboard</span>
-        </Link>
-        <Link href="/courses" className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <BookOpen className="h-5 w-5" />
-          <span className="font-medium">Courses</span>
-        </Link>
+
+      {/* Nav links */}
+      <nav className="flex-1 flex flex-col gap-1 py-4 px-3">
+        {navItems.map(({ label, href, icon: Icon }) => {
+          // Dashboard active when at /dashboard exactly or /dashboard (without sub-routes)
+          const isActive =
+            href === '/dashboard'
+              ? pathname === '/dashboard' || pathname === '/dashboard/'
+              : pathname.startsWith(href)
+
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={`q-nav-link ${isActive ? 'active' : ''}`}
+            >
+              <Icon size={16} strokeWidth={2} />
+              <span>{label}</span>
+            </Link>
+          )
+        })}
+      </nav>
+
+      {/* AI Learning Assistant button */}
+      <div className="p-3 border-t border-[var(--q-border)]">
+        <button
+          className="flex items-center gap-2 w-full rounded-lg text-white font-semibold text-xs px-3 py-2.5 transition-all hover:opacity-90"
+          style={{ background: 'var(--q-purple)' }}
+        >
+          <Bot size={16} />
+          <span>AI Learning Assistant</span>
+        </button>
       </div>
-      <div className="border-t p-4 flex flex-col gap-2">
-        <Link href="/profile" className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <User className="h-5 w-5" />
-          <span className="font-medium">Profile</span>
-        </Link>
-        <Link href="/settings" className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-          <Settings className="h-5 w-5" />
-          <span className="font-medium">Settings</span>
-        </Link>
-      </div>
-    </div>
+    </aside>
   )
 }

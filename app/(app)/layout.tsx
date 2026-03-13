@@ -1,5 +1,4 @@
 import { Sidebar } from '@/components/layout/Sidebar'
-import { Topbar } from '@/components/layout/Topbar'
 
 export default function AppLayout({
   children,
@@ -7,14 +6,11 @@ export default function AppLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-50 text-gray-900 font-sans">
+    <div className="flex h-screen overflow-hidden" style={{ background: 'var(--q-bg-main)' }}>
       <Sidebar />
-      <div className="flex flex-1 flex-col overflow-hidden">
-        <Topbar />
-        <main className="flex-1 overflow-y-auto p-6">
-          {children}
-        </main>
-      </div>
+      <main className="flex-1 overflow-y-auto">
+        {children}
+      </main>
     </div>
   )
 }
